@@ -7,3 +7,7 @@ build:
 run:
 	make build
 	target/debug/reproduction
+
+clean:
+	cargo clean
+	rm -rf static/wasm/
