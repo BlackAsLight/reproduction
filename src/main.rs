@@ -1,5 +1,5 @@
 use leptos::*;
-use leptos_router::{ActionForm, Route, Router, Routes, A};
+use leptos_router::{ActionForm, Method, Route, Router, Routes, A};
 
 #[cfg(feature = "server")]
 #[actix_web::main]
@@ -54,7 +54,7 @@ fn App(cx: Scope) -> impl IntoView {
 	view! { cx,
 		<Router>
 			<Routes>
-				<Route path="/" view=|cx| view! { cx,
+				<Route path="/" methods={&[Method::Get, Method::Post]} view=|cx| view! { cx,
 					<A href="/contact">"Contract"</A>
 				} />
 				<Route path="/contact" view=|cx| view! { cx, <Contract /> } />
